@@ -44,11 +44,11 @@ export default function Navbar() {
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-colors transition-shadow duration-300 ${
+      className={`fixed top-0 left-0 right-0 z-50 pt-[env(safe-area-inset-top)] transition-colors transition-shadow duration-300 ${
         scrolled ? 'glass-strong shadow-lg shadow-black/20' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between pt-4">
         <a href="#" className="text-xl font-bold gradient-text">
           {'<Arjun />'}
         </a>
