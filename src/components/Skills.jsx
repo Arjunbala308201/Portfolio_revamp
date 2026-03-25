@@ -6,8 +6,8 @@ export default function Skills() {
   const categories = Object.values(skillsData);
 
   return (
-    <section id="skills" className="py-24 px-6 relative">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+    <section id="skills" className="py-16 sm:py-24 px-4 sm:px-6 relative">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <div className="max-w-6xl mx-auto">
         <SectionHeading title="Skills & Technologies" subtitle="What I work with" />
 
@@ -19,7 +19,7 @@ export default function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: ci * 0.15 }}
-              className="glass rounded-2xl p-8 hover:border-primary/30 transition-all duration-300"
+              className="glass rounded-2xl p-5 sm:p-8 hover:border-primary/30 transition-all duration-300"
             >
               <div className="flex items-center gap-3 mb-6">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">

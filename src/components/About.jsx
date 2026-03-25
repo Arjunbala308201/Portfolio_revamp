@@ -4,8 +4,8 @@ import SectionHeading from './SectionHeading';
 
 export default function About() {
   return (
-    <section id="about" className="py-24 px-6 relative">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+    <section id="about" className="py-16 sm:py-24 px-4 sm:px-6 relative">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <div className="max-w-6xl mx-auto">
         <SectionHeading title="About Me" subtitle="Get to know me" />
 
@@ -14,7 +14,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="text-gray-400 text-lg leading-relaxed max-w-3xl mx-auto text-center mb-16"
+          className="text-gray-400 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto text-center mb-10 sm:mb-16"
         >
           {aboutData.summary}
         </motion.p>

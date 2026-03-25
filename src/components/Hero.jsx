@@ -15,7 +15,7 @@ export default function Hero() {
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[120px]" />
       <div className="absolute bottom-1/4 -right-32 w-96 h-96 bg-purple-500/15 rounded-full blur-[120px]" />
 
-      <div className="relative z-10 max-w-6xl mx-auto px-6 py-32 flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 py-20 sm:py-32 flex flex-col-reverse lg:flex-row items-center gap-8 sm:gap-12 lg:gap-20">
         {/* Text content */}
         <motion.div
           initial={{ opacity: 0, x: -40 }}
@@ -36,7 +36,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.3 }}
-            className="text-5xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4"
+            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight mb-4"
           >
             <span className="gradient-text">{heroData.name}</span>
           </motion.h1>
@@ -45,7 +45,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.4 }}
-            className="text-2xl sm:text-3xl font-semibold text-gray-300 mb-6"
+            className="text-xl sm:text-2xl md:text-3xl font-semibold text-gray-300 mb-6"
           >
             {heroData.title}
           </motion.h2>
@@ -54,7 +54,7 @@ export default function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.5 }}
-            className="text-gray-400 text-lg max-w-xl leading-relaxed mb-10"
+            className="text-gray-400 text-base sm:text-lg max-w-xl leading-relaxed mb-8 sm:mb-10"
           >
             {heroData.tagline}
           </motion.p>
@@ -67,7 +67,7 @@ export default function Hero() {
           >
             <a
               href="#projects"
-              className="group flex items-center gap-2 px-8 py-3.5 bg-primary hover:bg-primary-dark text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-primary/25"
+              className="group flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 bg-primary hover:bg-primary-dark text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 text-sm sm:text-base"
             >
               <FolderOpen size={18} />
               View Projects
@@ -75,7 +75,7 @@ export default function Hero() {
             <a
               href="/resume.pdf"
               download
-              className="flex items-center gap-2 px-8 py-3.5 border border-border hover:border-primary/50 text-gray-300 hover:text-white font-semibold rounded-xl transition-all duration-300 hover:bg-primary/5"
+              className="flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 border border-border hover:border-primary/50 text-gray-300 hover:text-white font-semibold rounded-xl transition-all duration-300 hover:bg-primary/5 text-sm sm:text-base"
             >
               <Download size={18} />
               Download Resume
@@ -90,7 +90,7 @@ export default function Hero() {
           transition={{ duration: 0.7, delay: 0.3, ease: 'easeOut' }}
           className="relative flex-shrink-0"
         >
-          <div className="relative w-72 h-72 lg:w-80 lg:h-80">
+          <div className="relative w-48 h-48 sm:w-64 sm:h-64 lg:w-80 lg:h-80">
             {/* Glow ring */}
             <div className="absolute -inset-1 bg-gradient-to-br from-primary via-purple-500 to-primary rounded-full opacity-60 blur-md animate-pulse" />
             <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-primary/30">

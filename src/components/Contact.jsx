@@ -40,12 +40,12 @@ export default function Contact() {
   };
 
   return (
-    <section id="contact" className="py-24 px-6 relative">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+    <section id="contact" className="py-16 sm:py-24 px-4 sm:px-6 relative">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <div className="max-w-6xl mx-auto">
         <SectionHeading title="Get In Touch" subtitle="Let's connect" />
 
-        <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
+        <div className="grid md:grid-cols-2 gap-8 sm:gap-12 max-w-4xl mx-auto">
           {/* Contact info */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -92,7 +92,7 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="glass rounded-2xl p-8 flex flex-col gap-5"
+            className="glass rounded-2xl p-5 sm:p-8 flex flex-col gap-5"
           >
             <div>
               <label className="text-sm text-gray-400 mb-1.5 block">Name</label>

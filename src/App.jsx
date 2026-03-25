@@ -11,6 +11,7 @@ function App() {
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-white">
       <Navbar />
+      <main className="pt-16">
       <Hero />
       <About />
       <Skills />
@@ -18,6 +19,7 @@ function App() {
       <Projects />
       <Contact />
       <Footer />
+      </main>
     </div>
   );
 }

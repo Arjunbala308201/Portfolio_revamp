@@ -86,7 +86,7 @@ function ProjectModal({ project, onClose }) {
           <X size={16} />
         </button>
 
-        <div className="p-8">
+        <div className="p-4 sm:p-8">
           {project.video && (
             <div className="mb-8 rounded-xl overflow-hidden" style={{ marginTop: '-2%' }}>
               <div className="overflow-hidden" style={{ marginTop: '-8%' }}>
@@ -121,7 +121,7 @@ function ProjectModal({ project, onClose }) {
             )}
           </div>
 
-          <h3 className="text-2xl font-bold text-white mb-3">{project.title}</h3>
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-3">{project.title}</h3>
           <p className="text-gray-400 leading-relaxed mb-6">
             {project.fullDesc || project.shortDesc}
           </p>
@@ -213,11 +213,11 @@ function TeamProjectCard({ project, onClick }) {
         <div className="aspect-video md:aspect-auto">
           <PlaceholderImage alt={project.images[0].alt} index={0} />
         </div>
-        <div className="p-8 flex flex-col justify-center">
+        <div className="p-5 sm:p-8 flex flex-col justify-center">
           <span className="text-xs font-mono text-primary bg-primary/10 px-2 py-1 rounded self-start mb-3">
             Team Project
           </span>
-          <h3 className="text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
+          <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-primary transition-colors">
             {project.title}
           </h3>
           <p className="text-gray-400 text-sm leading-relaxed mb-5">{project.shortDesc}</p>
@@ -335,8 +335,8 @@ export default function Projects() {
   const [selectedProject, setSelectedProject] = useState(null);
 
   return (
-    <section id="projects" className="py-24 px-6 relative">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+    <section id="projects" className="py-16 sm:py-24 px-4 sm:px-6 relative">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <div className="max-w-6xl mx-auto">
         <SectionHeading title="Projects" subtitle="What I've built" />
 

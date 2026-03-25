@@ -7,7 +7,7 @@ export default function SectionHeading({ title, subtitle }) {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.5 }}
-      className="text-center mb-16"
+      className="text-center mb-10 sm:mb-16"
     >
       <p className="text-primary font-mono text-sm tracking-wider mb-2">
         {subtitle}

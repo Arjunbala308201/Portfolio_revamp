@@ -5,8 +5,8 @@ import SectionHeading from './SectionHeading';
 
 export default function Experience() {
   return (
-    <section id="experience" className="py-24 px-6 relative">
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
+    <section id="experience" className="py-16 sm:py-24 px-4 sm:px-6 relative">
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full max-w-[600px] h-px bg-gradient-to-r from-transparent via-primary/30 to-transparent" />
       <div className="max-w-4xl mx-auto">
         <SectionHeading title="Professional Experience" subtitle="Where I've worked" />
 
@@ -26,10 +26,10 @@ export default function Experience() {
               {/* Timeline dot */}
               <div className="absolute left-0 md:left-8 top-1 -translate-x-1/2 w-4 h-4 rounded-full bg-primary border-4 border-[#0a0a0f] glow" />
 
-              <div className="glass rounded-2xl p-8 hover:border-primary/30 transition-all duration-300">
+              <div className="glass rounded-2xl p-5 sm:p-8 hover:border-primary/30 transition-all duration-300">
                 <div className="flex flex-wrap items-start justify-between gap-4 mb-6">
                   <div>
-                    <h3 className="text-xl font-bold text-white mb-1">{exp.role}</h3>
+                    <h3 className="text-lg sm:text-xl font-bold text-white mb-1">{exp.role}</h3>
                     <div className="flex items-center gap-2 text-primary font-medium">
                       <Briefcase size={15} />
                       {exp.company}
