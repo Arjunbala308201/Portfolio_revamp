@@ -48,7 +48,7 @@ export default function Navbar() {
         scrolled ? 'glass-strong shadow-lg shadow-black/20' : 'bg-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between pt-4">
+      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
         <a href="#" className="text-xl font-bold gradient-text">
           {'<Arjun />'}
         </a>

@@ -9,7 +9,7 @@ const profileImg = Object.values(profileModules)[0] || profilePlaceholder;
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[calc(100vh-4rem-env(safe-area-inset-top))] flex items-center justify-center overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 dot-pattern opacity-40" />
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[120px]" />

@@ -61,7 +61,7 @@ export default function Contact() {
 
             <div className="flex items-center gap-3 mb-6 text-gray-400 text-sm">
               <MapPin size={16} className="text-primary" />
-              Chennai, India
+              Kanyakumari, Tamil Nadu, India
             </div>
 
             <div className="space-y-4">
