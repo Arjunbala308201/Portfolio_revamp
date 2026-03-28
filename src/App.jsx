@@ -11,7 +11,7 @@ function App() {
   return (
     <div className="min-h-screen bg-[#0a0a0f] text-white">
       <Navbar />
-      <main className="pt-[calc(4rem+env(safe-area-inset-top))]">
+      <main>
       <Hero />
       <About />
       <Skills />

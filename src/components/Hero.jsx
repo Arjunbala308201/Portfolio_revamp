@@ -9,7 +9,7 @@ const profileImg = Object.values(profileModules)[0] || profilePlaceholder;
 
 export default function Hero() {
   return (
-    <section className="relative min-h-[calc(100vh-4rem-env(safe-area-inset-top))] flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-[calc(100vh-4rem)] flex items-center justify-center overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 dot-pattern opacity-40" />
       <div className="absolute top-1/4 -left-32 w-96 h-96 bg-primary/20 rounded-full blur-[120px]" />
@@ -67,6 +67,7 @@ export default function Hero() {
           >
             <a
               href="#projects"
+              onClick={(e) => { e.preventDefault(); document.querySelector('#projects')?.scrollIntoView({ behavior: 'smooth' }); }}
               className="group flex items-center gap-2 px-6 sm:px-8 py-3 sm:py-3.5 bg-primary hover:bg-primary-dark text-white font-semibold rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 text-sm sm:text-base"
             >
               <FolderOpen size={18} />

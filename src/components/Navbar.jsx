@@ -8,6 +8,12 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeSection, setActiveSection] = useState('');
 
+  const smoothScroll = (e, href) => {
+    e.preventDefault();
+    const el = document.querySelector(href);
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  };
+
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
     window.addEventListener('scroll', onScroll);
@@ -40,54 +46,52 @@ export default function Navbar() {
   }, []);
 
   return (
-    <motion.nav
-      initial={{ opacity: 0 }}
-      animate={{ opacity: 1 }}
-      transition={{ duration: 0.4, ease: 'easeOut' }}
-      className={`fixed top-0 left-0 right-0 z-50 pt-[env(safe-area-inset-top)] transition-colors transition-shadow duration-300 ${
-        scrolled ? 'glass-strong shadow-lg shadow-black/20' : 'bg-transparent'
-      }`}
-    >
-      <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
-        <a href="#" className="text-xl font-bold gradient-text">
-          {'<Arjun />'}
-        </a>
-
-        {/* Desktop */}
-        <div className="hidden md:flex items-center gap-1">
-          {navLinks.map(({ name, href }) => (
-            <a
-              key={name}
-              href={href}
-              className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
-                activeSection === href
-                  ? 'text-primary bg-primary/10'
-                  : 'text-gray-400 hover:text-white hover:bg-white/5'
-              }`}
-            >
-              {name}
-            </a>
-          ))}
-          <a
-            href="/resume.pdf"
-            download
-            className="ml-4 flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-dark text-white text-sm font-medium rounded-lg transition-all duration-200"
-          >
-            <Download size={14} />
-            Resume
+    <>
+      <nav
+        className="sticky top-0 z-50 h-16 bg-[#0a0a0f]"
+      >
+        <div className="max-w-6xl mx-auto px-6 h-full flex items-center justify-between">
+          <a href="#" className="text-xl font-bold gradient-text">
+            {'<Arjun />'}
           </a>
+
+          {/* Desktop */}
+          <div className="hidden md:flex items-center gap-1">
+            {navLinks.map(({ name, href }) => (
+              <a
+                key={name}
+                href={href}
+                onClick={(e) => smoothScroll(e, href)}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  activeSection === href
+                    ? 'text-primary bg-primary/10'
+                    : 'text-gray-400 hover:text-white hover:bg-white/5'
+                }`}
+              >
+                {name}
+              </a>
+            ))}
+            <a
+              href="/resume.pdf"
+              download
+              className="ml-4 flex items-center gap-2 px-4 py-2 bg-primary hover:bg-primary-dark text-white text-sm font-medium rounded-lg transition-all duration-200"
+            >
+              <Download size={14} />
+              Resume
+            </a>
+          </div>
+
+          {/* Mobile toggle */}
+          <button
+            onClick={() => setMobileOpen(!mobileOpen)}
+            className="md:hidden text-gray-400 hover:text-white p-2"
+          >
+            {mobileOpen ? <X size={22} /> : <Menu size={22} />}
+          </button>
         </div>
+      </nav>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setMobileOpen(!mobileOpen)}
-          className="md:hidden text-gray-400 hover:text-white p-2"
-        >
-          {mobileOpen ? <X size={22} /> : <Menu size={22} />}
-        </button>
-      </div>
-
-      {/* Mobile sidebar overlay + drawer */}
+      {/* Mobile sidebar — rendered outside nav to avoid glass-strong backdrop-filter inheritance */}
       <AnimatePresence>
         {mobileOpen && (
           <>
@@ -97,7 +101,7 @@ export default function Navbar() {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               onClick={() => setMobileOpen(false)}
-              className="fixed inset-0 bg-black/60 backdrop-blur-sm md:hidden z-40"
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm md:hidden z-[60]"
             />
             {/* Sidebar */}
             <motion.div
@@ -106,7 +110,7 @@ export default function Navbar() {
               exit={{ x: '-100%' }}
               transition={{ type: 'tween', duration: 0.3, ease: 'easeOut' }}
               style={{ backgroundColor: '#0a0a0f' }}
-              className="fixed top-0 left-0 bottom-0 w-72 border-r border-border md:hidden z-50 flex flex-col isolate"
+              className="fixed top-0 left-0 bottom-0 w-72 border-r border-border md:hidden z-[70] flex flex-col"
             >
               <div className="flex items-center justify-between px-6 h-16 border-b border-border">
                 <a href="#" className="text-xl font-bold gradient-text">
@@ -124,7 +128,7 @@ export default function Navbar() {
                   <a
                     key={name}
                     href={href}
-                    onClick={() => setMobileOpen(false)}
+                    onClick={(e) => { smoothScroll(e, href); setMobileOpen(false); }}
                     className={`px-4 py-3 rounded-lg text-sm font-medium transition-all ${
                       activeSection === href
                         ? 'text-primary bg-primary/10'
@@ -149,6 +153,6 @@ export default function Navbar() {
           </>
         )}
       </AnimatePresence>
-    </motion.nav>
+    </>
   );
 }
